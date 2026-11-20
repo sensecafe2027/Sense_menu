@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#120c08">
+<title>سنس كافيه | المنيو</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Dancing+Script:wght@500&family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #120c08;
+    --bg2: #1d130d;
+    --card: #0d0907;
+    --gold: #d9b05a;
+    --gold-light: #f3d98b;
+    --gold-dark: #9c7226;
+    --text: #f4ead6;
+    --muted: #b79e72;
+    --gold-grad: linear-gradient(180deg, #f7e2a0 0%, #d9b05a 50%, #9c7226 100%);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+  body {
+    font-family: "Tajawal", "Segoe UI", Tahoma, sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(ellipse at 85% 0%, rgba(217,176,90,.18), transparent 45%),
+      radial-gradient(ellipse at 0% 60%, rgba(120,70,30,.22), transparent 50%),
+      linear-gradient(180deg, var(--bg2), var(--bg) 40%, #0a0705);
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-bottom: 40px;
+  }
+
+  /* ---------- Header ---------- */
+  header { text-align: center; padding: 34px 16px 18px; position: relative; }
+  .script {
+    font-family: "Dancing Script", cursive;
+    color: var(--gold);
+    line-height: 1.15;
+  }
+  .script.tl { position: absolute; top: 18px; left: 14px; text-align: left; font-size: 18px; direction: ltr; opacity: .9; }
+  .logo-s {
+    font-family: "Cinzel", serif;
+    font-weight: 800;
+    font-size: 84px;
+    line-height: 1;
+    background: var(--gold-grad);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+    display: inline-block;
+    position: relative;
+  }
+  .logo-ring {
+    width: 112px; height: 112px;
+    margin: 0 auto 6px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    border-left-color: transparent;
+    border-bottom-color: rgba(217,176,90,.35);
+    display: grid; place-items: center;
+    transform: rotate(-25deg);
+  }
+  .logo-ring > span { transform: rotate(25deg); }
+  h1 {
+    font-family: "Cinzel", serif;
+    font-weight: 800;
+    font-size: clamp(34px, 11vw, 56px);
+    letter-spacing: .02em;
+    direction: ltr;
+    background: var(--gold-grad);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+    line-height: 1.1;
+  }
+  .tagline {
+    margin-top: 8px;
+    font-family: "Reem Kufi", "Tajawal", sans-serif;
+    font-size: 21px;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+  }
+  .tagline::before, .tagline::after { content: ""; width: 38px; height: 1px; background: var(--gold); }
+
+  /* ---------- Category nav ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(13,9,7,.92);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(217,176,90,.25);
+    border-bottom: 1px solid rgba(217,176,90,.35);
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 12px;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a {
+    display: inline-block;
+    font-family: "Reem Kufi", "Tajawal", sans-serif;
+    font-size: 16px;
+    color: var(--gold-light);
+    text-decoration: none;
+    padding: 6px 16px;
+    margin-inline-start: 6px;
+    border: 1px solid rgba(217,176,90,.5);
+    border-radius: 999px;
+  }
+  nav a:hover, nav a:focus-visible { background: var(--gold); color: #1a1008; outline: none; }
+
+  /* ---------- Sections ---------- */
+  main {
+    max-width: 980px; margin: 26px auto 0; padding: 0 14px;
+    display: grid; gap: 34px 22px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 760px) {
+    main { grid-template-columns: 1fr 1fr; align-items: start; }
+    .wide { grid-column: 1 / -1; }
+  }
+  section.box {
+    position: relative;
+    background: linear-gradient(180deg, rgba(20,13,9,.96), var(--card));
+    border: 1.5px solid var(--gold);
+    border-radius: 22px;
+    padding: 40px 18px 12px;
+    box-shadow: 0 0 0 4px rgba(217,176,90,.06), 0 12px 30px rgba(0,0,0,.5);
+  }
+  .tab {
+    position: absolute; top: -22px; right: 22px;
+    display: flex; align-items: center; gap: 10px;
+    background: var(--card);
+    border: 1.5px solid var(--gold);
+    border-radius: 999px;
+    padding: 6px 20px 6px 18px;
+  }
+  .tab h2 {
+    font-family: "Reem Kufi", "Tajawal", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    background: var(--gold-grad);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+    line-height: 1.5;
+  }
+  .tab svg { width: 28px; height: 28px; fill: none; stroke: var(--gold-light); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+  ul { list-style: none; }
+  li {
+    display: flex; align-items: baseline; gap: 10px;
+    padding: 9px 2px;
+    font-size: 19px;
+  }
+  li + li { border-top: 1px solid rgba(217,176,90,.08); }
+  li .name { font-weight: 500; }
+  li .dots { flex: 1; border-bottom: 2px dotted rgba(217,176,90,.45); transform: translateY(-4px); min-width: 18px; }
+  li .price {
+    font-weight: 700;
+    color: var(--gold-light);
+    direction: ltr;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 0 12px rgba(217,176,90,.35);
+  }
+  li .price small { font-size: 12px; color: var(--muted); font-weight: 400; margin-inline-start: 3px; }
+  .unit { text-align: center; font-size: 13px; color: var(--muted); padding: 6px 0 8px; }
+
+  /* ---------- Footer ---------- */
+  .contact { max-width: 520px; margin: 38px auto 0; padding: 0 14px; }
+  .contact a {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    border: 1.5px solid var(--gold);
+    border-radius: 999px;
+    padding: 12px 18px;
+    background: var(--card);
+    color: var(--text);
+    text-decoration: none;
+    font-family: "Reem Kufi", "Tajawal", sans-serif;
+    font-size: 22px;
+  }
+  .contact a:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; }
+  .contact svg { width: 26px; height: 26px; fill: var(--gold-light); }
+  .contact b { direction: ltr; font-family: "Tajawal", sans-serif; letter-spacing: .04em; background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .invite { text-align: center; margin-top: 20px; font-family: "Reem Kufi", "Tajawal", sans-serif; font-size: 20px; color: var(--gold-light); }
+  .script.bottom { text-align: center; margin-top: 22px; font-size: 20px; direction: ltr; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="script tl">Good Food<br>Good Mood</div>
+  <div class="logo-ring"><span class="logo-s">S</span></div>
+  <h1>SENSE CAFE</h1>
+  <p class="tagline">إحساس الطعم يجمعنا</p>
+</header>
+
+<nav aria-label="أقسام المنيو">
+  <a href="#pizza">بيتزا</a>
+  <a href="#snacks">فطائر</a>
+  <a href="#sandwiches">سندوتشات</a>
+  <a href="#sudani">سوداني</a>
+  <a href="#drinks">مشروبات</a>
+  <a href="#sweets">حلويات</a>
+  <a href="#icecream">إيسكريم</a>
+</nav>
+
+<main>
+
+  <section class="box" id="pizza">
+    <div class="tab">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 8c8-5 16-5 24 0L16 29z"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="13" r="1.6"/><circle cx="16" cy="19" r="1.6"/></svg>
+      <h2>بيتزا</h2>
+    </div>
+    <ul>
+      <li><span class="name">هوت دوق كبير</span><span class="dots"></span><span class="price">60,000</span></li>
+      <li><span class="name">هوت دوق وسط</span><span class="dots"></span><span class="price">55,000</span></li>
+      <li><span class="name">خضار وسط</span><span class="dots"></span><span class="price">40,000</span></li>
+      <li><span class="name">خضار كبير</span><span class="dots"></span><span class="price">45,000</span></li>
+    </ul>
+  </section>
+
+  <section class="box" id="snacks">
+    <div class="tab">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 20c0-8 7-14 15-14 6 0 9 3 9 7 0 8-7 14-15 14-5 0-9-3-9-7z"/><path d="M10 18c3-4 7-6 12-6"/></svg>
+      <h2>فطائر</h2>
+    </div>
+    <ul>
+      <li><span class="name">هوت دوق</span><span class="dots"></span><span class="price">30,000</span></li>
+      <li><span class="name">اندومي</span><span class="dots"></span><span class="price">15,000</span></li>
+    </ul>
+  </section>
+
+  <section class="box" id="sandwiches">
+    <div class="tab">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 23l7-14 19 5-4 13z"/><path d="M6 18l19 5M9 13l17 4"/></svg>
+      <h2>سندوتشات</h2>
+    </div>
+    <ul>
+      <li><span class="name">كرسبي</span><span class="dots"></span><span class="price">25,000</span></li>
+      <li><span class="name">شاورما</span><span class="dots"></span><span class="price">25,000</span></li>
+    </ul>
+  </section>
+
+  <section class="box" id="sudani">
+    <div class="tab">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M12 4h8l-2 5c4 2 6 6 6 11 0 4-3 7-8 7s-8-3-8-7c0-5 2-9 6-11z"/><path d="M10 17h12"/></svg>
+      <h2>سوداني</h2>
+    </div>
+    <ul>
+      <li><span class="name">قهوة في قهوة كبيرة</span><span class="dots"></span><span class="price">45,000</span></li>
+      <li><span class="name">قهوة في قهوة صغيرة</span><span class="dots"></span><span class="price">35,000</span></li>
+    </ul>
+  </section>
+
+  <section class="box wide" id="drinks">
+    <div class="tab">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 12h18v6a8 8 0 0 1-8 8h-2a8 8 0 0 1-8-8z"/><path d="M23 14h2a3 3 0 0 1 0 6h-2"/><path d="M11 3c-1 2 1 3 0 5M16 3c-1 2 1 3 0 5"/></svg>
+      <h2>مشروبات ساخنة &amp; باردة</h2>
+    </div>
+    <ul>
+      <li><span class="name">شاي</span><span class="dots"></span><span class="price">7,000</span></li>
+      <li><span class="name">شاي لبن</span><span class="dots"></span><span class="price">12,000</span></li>
+      <li><span class="name">قهوة</span><span class="dots"></span><span class="price">12,000</span></li>
+      <li><span class="name">تركي</span><span class="dots"></span><span class="price">15,000</span></li>
+      <li><span class="name">نسكافية</span><span class="dots"></span><span class="price">15,000</span></li>
+      <li><span class="name">ايس كوفي</span><span class="dots"></span><span class="price">18,000</span></li>
+      <li><span class="name">ميلك شيك</span><span class="dots"></span><span class="price">25,000</span></li>
+      <li><span class="name">موهيتو</span><span class="dots"></span><span class="price">20,000</span></li>
+      <li><span class="name">فراولة</span><span class="dots"></span><span class="price">25,000</span></li>
+      <li><span class="name">اناناس</span><span class="dots"></span><span class="price">25,000</span></li>
+      <li><span class="name">مشروب غازي</span><span class="dots"></span><span class="price">7,000</span></li>
+      <li><span class="name">مياه معدنية</span><span class="dots"></span><span class="price">3,500</span></li>
+    </ul>
+  </section>
+
+  <section class="box" id="sweets">
+    <div class="tab">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 22L8 8h18l3 14z"/><path d="M3 22h26v3H3z"/><path d="M8 15h20"/></svg>
+      <h2>حلويات</h2>
+    </div>
+    <ul>
+      <li><span class="name">تورتة كبيرة</span><span class="dots"></span><span class="price">65,000</span></li>
+      <li><span class="name">جاتو</span><span class="dots"></span><span class="price">10,000</span></li>
+      <li><span class="name">تشيز كيك</span><span class="dots"></span><span class="price">15,000</span></li>
+      <li><span class="name">سينس كيك</span><span class="dots"></span><span class="price">15,000</span></li>
+      <li><span class="name">ريد فيلفيت</span><span class="dots"></span><span class="price">15,000</span></li>
+    </ul>
+  </section>
+
+  <section class="box" id="icecream">
+    <div class="tab">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9 14a7 7 0 0 1 14 0z"/><path d="M10 14l6 15 6-15"/></svg>
+      <h2>إيسكريم</h2>
+    </div>
+    <ul>
+      <li><span class="name">صغير</span><span class="dots"></span><span class="price">7,000</span></li>
+      <li><span class="name">وسط</span><span class="dots"></span><span class="price">14,000</span></li>
+    </ul>
+  </section>
+
+</main>
+
+<div class="contact">
+  <a href="tel:0918472318" aria-label="اتصل بالإدارة">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+    <span>رقم الادارة:</span> <b>0918472318</b>
+  </a>
+  <p class="invite">زورونا .. واستمتعوا بأطيب الأوقات</p>
+  <p class="script bottom">Quality Tastes Better</p>
+</div>
+
+</body>
+</html>
